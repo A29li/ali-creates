@@ -1,40 +1,43 @@
 /* General Styling */
 :root {
-    --primary-color: #007bff;
-    --dark-color: #333;
-    --light-color: #f4f4f4;
-    --bg-color: #ffffff;
+    --primary-color: #9370DB; /* بنفسجي غامق (Medium Purple) */
+    --accent-color: #BA55D3; /* بنفسجي أفتح للتأثيرات */
+    --dark-color: #ffffff; /* لون النص الأساسي (أبيض) */
+    --light-color: #1a1a1a; /* لون خلفية الأقسام الثانوية */
+    --bg-color: #000000; /* الخلفية الرئيسية (أسود) */
 }
 
 body {
     font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     margin: 0;
     padding: 0;
-    line-height: 1.6;
+    line-height: 1.7; /* زيادة سطر النص للوضوح */
     background-color: var(--bg-color);
     color: var(--dark-color);
-    scroll-behavior: smooth; /* Makes scrolling smooth when clicking nav links */
+    scroll-behavior: smooth;
 }
 
 h1, h2, h3 {
     line-height: 1.2;
+    color: var(--primary-color); /* العناوين باللون البنفسجي */
 }
 
 h2 {
     text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 10px;
+    font-size: 3rem; /* تكبير حجم العنوان */
+    margin-bottom: 20px;
+    letter-spacing: 1px; /* إضافة تباعد للحروف */
 }
 
 section {
-    padding: 60px 20px;
-    max-width: 1100px;
+    padding: 80px 30px; /* زيادة التباعد حول الأقسام */
+    max-width: 1200px;
     margin: 0 auto;
 }
 
 /* ======== Modal (Pop-up) Styling ======== */
 .modal {
-    display: none; /* Hidden by default */
+    display: none; 
     position: fixed;
     z-index: 1000;
     left: 0;
@@ -42,254 +45,38 @@ section {
     width: 100%;
     height: 100%;
     overflow: auto;
-    background-color: rgba(0, 0, 0, 0.6); /* Black overlay */
+    background-color: rgba(0, 0, 0, 0.8); /* خلفية سوداء شفافة */
 }
 
 .modal-content {
-    background-color: #fff;
+    background-color: #0d0d0d; /* خلفية داكنة للنافذة المنبثقة */
     margin: 15% auto;
-    padding: 30px;
-    border: 1px solid #888;
-    width: 80%;
-    max-width: 500px;
-    border-radius: 10px;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+    padding: 40px;
+    border: 2px solid var(--primary-color); /* إطار بنفسجي */
+    width: 85%;
+    max-width: 550px;
+    border-radius: 12px;
+    box-shadow: 0 5px 25px rgba(147, 112, 219, 0.5); /* ظل بنفسجي */
     text-align: center;
     animation: slide-in 0.5s ease-out;
-}
-
-@keyframes slide-in {
-    from {
-        transform: translateY(-50px);
-        opacity: 0;
-    }
-    to {
-        transform: translateY(0);
-        opacity: 1;
-    }
-}
-
-.close-btn {
-    color: #aaa;
-    float: right;
-    font-size: 28px;
-    font-weight: bold;
-    cursor: pointer;
-}
-.close-btn:hover {
-    color: #333;
 }
 
 #modal-close-btn {
     background: var(--primary-color);
     color: white;
-    padding: 10px 20px;
+    padding: 12px 25px;
     border: none;
-    border-radius: 5px;
+    border-radius: 6px;
     cursor: pointer;
-    font-size: 1rem;
-    margin-top: 15px;
+    font-size: 1.1rem;
+    margin-top: 20px;
+    transition: background 0.3s;
 }
 #modal-close-btn:hover {
-    background: #0056b3;
+    background: var(--accent-color);
 }
 
 
 /* ======== Header & Navigation ======== */
 header {
-    background: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-    position: sticky;
-    top: 0;
-    z-index: 999;
-}
-
-nav {
-    max-width: 1100px;
-    margin: 0 auto;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 0 20px;
-    height: 70px;
-}
-
-.logo {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--primary-color);
-}
-
-.nav-links {
-    list-style: none;
-    display: flex;
-}
-
-.nav-links li {
-    margin-left: 20px;
-}
-
-.nav-links a {
-    text-decoration: none;
-    color: var(--dark-color);
-    font-weight: 500;
-    transition: color 0.3s ease;
-}
-
-.nav-links a:hover {
-    color: var(--primary-color);
-}
-
-/* ======== Profile / Hero Section ======== */
-.hero {
-    text-align: center;
-    padding-top: 40px;
-}
-
-.profile-pic {
-    width: 150px;
-    height: 150px;
-    border-radius: 50%;
-    object-fit: cover;
-    border: 5px solid var(--primary-color);
-    box-shadow: 0 0 10px rgba(0,0,0,0.1);
-}
-
-.subtitle {
-    font-size: 1.2rem;
-    color: #666;
-    font-weight: 300;
-    margin-top: -15px;
-}
-
-.bio {
-    max-width: 600px;
-    margin: 20px auto;
-    font-size: 1.1rem;
-}
-
-/* ======== Updates Section ======== */
-#updates {
-    background-color: var(--light-color);
-}
-
-.updates-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-    margin-top: 30px;
-}
-
-.update-card {
-    background: #fff;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-    overflow: hidden;
-    transition: transform 0.3s ease;
-}
-
-.update-card:hover {
-    transform: translateY(-5px);
-}
-
-.update-card img {
-    width: 100%;
-    height: 150px;
-    object-fit: cover;
-}
-
-.update-card h3 {
-    padding: 15px 20px 0 20px;
-    margin-bottom: 5px;
-}
-
-.update-card .update-date {
-    padding: 0 20px;
-    font-size: 0.9rem;
-    color: #888;
-    font-style: italic;
-}
-
-.update-card p {
-    padding: 0 20px;
-}
-
-.btn-read-more {
-    display: inline-block;
-    padding: 8px 15px;
-    margin: 0 20px 20px 20px;
-    background: var(--primary-color);
-    color: #fff;
-    text-decoration: none;
-    border-radius: 5px;
-}
-
-/* ======== Tools Section ======== */
-.section-subtitle {
-    text-align: center;
-    font-size: 1.1rem;
-    color: #666;
-    max-width: 600px;
-    margin: -10px auto 30px auto;
-}
-
-.tools-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
-    gap: 20px;
-    text-align: center;
-}
-
-.tool-card {
-    background: #fff;
-    padding: 20px;
-    border-radius: 8px;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
-}
-
-.tool-card img {
-    width: 80px;
-    height: 80px;
-    margin-bottom: 10px;
-}
-
-.tool-card h3 {
-    margin-bottom: 5px;
-    font-size: 1.1rem;
-}
-
-.tool-card p {
-    font-size: 0.9rem;
-    color: #777;
-    margin: 0;
-}
-
-/* ======== Contact Section ======== */
-#contact {
-    text-align: center;
-    background-color: #fff;
-}
-#contact p {
-    font-size: 1.1rem;
-    margin: 10px 0;
-    line-height: 1.8;
-}
-
-/* This is the new style for your email link */
-#contact a {
-    color: var(--primary-color);
-    text-decoration: none;
-    font-weight: 500;
-}
-#contact a:hover {
-    text-decoration: underline;
-}
-
-/* ======== Footer ======== */
-footer {
-    text-align: center;
-    padding: 30px;
-    background: var(--dark-color);
-    color: var(--light-color);
-    margin-top: 0; 
-}
+    background: #0d0

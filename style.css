@@ -1,54 +1,53 @@
 /* General Styling */
-@import url('https://fonts.googleapis.com/css2?family=Cairo:wght@400;700;900&display=swap');
-
 :root {
-    --primary-color: #7B68EE; /* بنفسجي فاتح/لافندر (Classic Lavender) */
-    --accent-color: #9932CC; /* بنفسجي غامق للتأثيرات */
+    --primary-color: #00BFFF; /* أزرق سماوي/نيلي عصري */
+    --accent-color: #1E90FF; /* أزرق أغمق للتأثيرات */
     --dark-color: #ffffff; /* لون النص الأساسي (أبيض ناصع) */
     --light-color: #0d0d0d; /* لون خلفية الأقسام الثانوية (داكن جداً) */
     --bg-color: #000000; /* الخلفية الرئيسية (أسود خالص) */
-    --font-stack: 'Cairo', sans-serif; /* الخط الكلاسيكي المميز */
+    --font-stack: "Segoe UI", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif; /* خط حديث وواضح */
 }
 
 body {
     font-family: var(--font-stack);
     margin: 0;
     padding: 0;
-    line-height: 1.8; /* زيادة سطر النص للراحة الكلاسيكية */
+    line-height: 1.6;
     background-color: var(--bg-color);
     color: var(--dark-color);
     scroll-behavior: smooth;
-    font-weight: 400;
-    direction: rtl; /* دعم اللغة العربية بالكامل */
-    text-align: right;
+    font-weight: 400; /* خط أساسي متوسط */
 }
 
 h1, h2, h3 {
     line-height: 1.2;
     color: var(--primary-color);
-    font-weight: 900; /* العناوين بخط سميك جداً */
+    font-weight: 700; /* العناوين بخط سميك */
 }
 
 h2 {
     text-align: center;
-    font-size: 3.5rem; /* تكبير واضح لحجم العنوان */
-    margin-bottom: 30px;
-    letter-spacing: 2px; /* تباعد أكبر للحروف */
-    text-transform: uppercase;
+    font-size: 3.2rem; /* تكبير إضافي لحجم العنوان */
+    margin-bottom: 25px;
+    letter-spacing: 1px;
 }
 
 section {
-    padding: 100px 40px; /* زيادة التباعد حول الأقسام */
+    padding: 80px 30px;
     max-width: 1200px;
     margin: 0 auto;
 }
 
-/* ======== Modal (Pop-up) Styling - تحديث الخط ======== */
+/* ======== Modal (Pop-up) Styling - عصري وداكن ======== */
 .modal-content {
     background-color: var(--light-color);
-    border: 3px solid var(--primary-color);
-    border-radius: 15px;
-    box-shadow: 0 5px 35px rgba(123, 104, 238, 0.5); /* ظل بنفسجي كلاسيكي */
+    margin: 15% auto;
+    padding: 40px;
+    border: 2px solid var(--primary-color);
+    width: 85%;
+    max-width: 550px;
+    border-radius: 15px; /* حواف أكثر دائرية */
+    box-shadow: 0 5px 30px rgba(0, 191, 255, 0.4); /* ظل أزرق متوهج */
 }
 
 #modal-close-btn {
@@ -57,31 +56,25 @@ section {
 }
 #modal-close-btn:hover {
     background: var(--accent-color);
-    transform: scale(1.05);
+    transform: scale(1.05); /* حركة عند التمرير */
 }
 
 
 /* ======== Header & Navigation ======== */
 header {
     background: var(--light-color);
-    box-shadow: 0 2px 15px rgba(123, 104, 238, 0.4);
-}
-
-nav {
-    padding: 0 40px;
-    height: 90px;
+    box-shadow: 0 2px 10px rgba(0, 191, 255, 0.2);
 }
 
 .logo {
-    font-size: 2.2rem; /* تكبير الشعار */
+    font-size: 1.9rem;
     color: var(--primary-color);
-    font-weight: 900;
+    font-weight: 800;
 }
 
 .nav-links a {
     color: var(--dark-color);
-    font-weight: 700;
-    font-size: 1.2rem; /* تكبير خط الروابط */
+    font-weight: 500;
 }
 
 .nav-links a:hover {
@@ -89,69 +82,54 @@ nav {
 }
 
 /* ======== Profile / Hero Section ======== */
-.hero {
-    text-align: center;
-    padding-top: 80px;
-}
-
 .profile-pic {
-    width: 200px; /* حجم كبير للصورة الشخصية */
-    height: 200px;
-    border: 8px solid var(--primary-color);
-    box-shadow: 0 0 30px rgba(123, 104, 238, 0.6);
+    width: 190px;
+    height: 190px;
+    border: 7px solid var(--primary-color);
+    box-shadow: 0 0 25px rgba(0, 191, 255, 0.5); /* إضاءة حول الصورة */
 }
 
 .subtitle {
-    font-size: 1.8rem; /* تكبير العنوان الفرعي */
-    color: #ccc;
-    font-weight: 700;
-    margin-top: -10px;
+    font-size: 1.6rem;
+    color: var(--primary-color);
+    font-weight: 300;
 }
 
 .bio {
-    max-width: 800px;
-    margin: 40px auto;
-    font-size: 1.3rem; /* تكبير خط السيرة الذاتية */
-    color: #ddd;
+    font-size: 1.2rem;
+    color: #bbb;
 }
 
-/* ======== Updates Section (نوافذ بارزة) ======== */
+/* ======== Updates Section (نوافذ حيوية) ======== */
 #updates {
-    background-color: var(--bg-color);
-}
-
-.updates-grid {
-    gap: 40px;
+    background-color: var(--bg-color); /* الأسود الأساسي */
 }
 
 .update-card {
     background: var(--light-color);
-    border-radius: 18px; /* حواف أكثر دائرية وكلاسيكية */
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-    transition: transform 0.4s ease, box-shadow 0.4s ease;
-    border: 1px solid var(--primary-color);
+    border-radius: 15px; /* حواف أكثر حداثة */
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.4s ease, box-shadow 0.4s ease; /* إضافة حركة سلسة */
+    border: 1px solid #333; /* إطار خفيف */
 }
 
 .update-card:hover {
-    transform: translateY(-12px); /* حركة بارزة */
-    box-shadow: 0 15px 40px rgba(123, 104, 238, 0.6);
+    transform: translateY(-10px); /* تحريك النافذة للأعلى عند التمرير */
+    box-shadow: 0 10px 30px rgba(0, 191, 255, 0.4); /* ظل أزرق متوهج */
 }
 
 .update-card h3 {
-    font-size: 1.7rem;
-    padding-bottom: 8px;
+    font-size: 1.6rem;
 }
 
 .update-card p {
     color: #ccc;
-    font-size: 1.2rem;
+    font-size: 1.1rem;
 }
 
 .btn-read-more {
     background: var(--primary-color);
-    padding: 12px 25px;
-    font-size: 1.1rem;
-    border-radius: 8px;
+    transition: background 0.3s;
 }
 
 .btn-read-more:hover {
@@ -159,61 +137,55 @@ nav {
 }
 
 /* ======== Tools Section ======== */
-.section-subtitle {
-    font-size: 1.3rem;
-    color: #ccc;
-}
-
 .tools-grid {
-    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); /* تكبير حجم البطاقات */
 }
 
 .tool-card {
     background: var(--light-color);
-    padding: 40px;
-    border-radius: 18px;
-    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.6);
-    border: 1px solid var(--primary-color);
+    padding: 35px;
+    border-radius: 15px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
+    transition: transform 0.3s ease;
+    border: 1px solid #333;
 }
 
 .tool-card:hover {
-    transform: scale(1.07);
-    border-color: var(--accent-color);
+    transform: scale(1.05); /* تكبير النافذة قليلاً عند التمرير */
+    border-color: var(--primary-color);
 }
 
 .tool-card img {
-    width: 120px; /* تكبير الأيقونات */
-    height: 120px;
+    width: 110px; /* تكبير حجم الأيقونات */
+    height: 110px;
+    opacity: 0.9; /* شفافية خفيفة */
 }
 
 .tool-card h3 {
-    font-size: 1.6rem;
+    font-size: 1.5rem;
 }
 
 /* ======== Contact Section ======== */
 #contact {
-    text-align: center;
     background-color: var(--bg-color);
 }
 
 #contact p {
-    font-size: 1.5rem;
+    font-size: 1.4rem;
     color: #bbb;
 }
 
 #contact a {
     color: var(--primary-color);
-    font-weight: 700;
+    font-weight: 600;
 }
 #contact a:hover {
     color: var(--accent-color);
-    text-decoration: underline;
 }
 
 /* ======== Footer ======== */
 footer {
-    padding: 50px;
     background: var(--light-color);
     color: #aaa;
-    font-size: 1.1rem;
+    font-size: 1rem;
 }
